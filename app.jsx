@@ -48,11 +48,8 @@ class Quiz extends React.Component {
   }
 
   CapturarRespuesta =(e)=>{
-    respuestasCliqueadas=[],
-    
-    .currentTarget.concat([respuestasClikeadas])
-    
-
+    let respuestasCliqueadas=[]  //array que va almacenar las respuestas seleccionas
+    let respuestaSeleccionada = e.currentTarget.textContend.capturas = respuestasCliqueadas.concat([respuestaSeleccionada]) //captura las respuestas seleccionadas por el momento  
   }
 
   render() {//se mostrara las preguntas con sus respuestas
@@ -68,9 +65,9 @@ class Quiz extends React.Component {
                   <p key={index}> {preguntas.pregunta[index]} </p>
 
                   <div className="">
-                    <button  key={index}> {preguntas.alternativas[0]} </button>
-                    <button  key={index}> {preguntas.alternativas[1]} </button>
-                    <button  key={index}> {preguntas.alternativas[2]} </button>
+                    <button onClick={CapturarRespuesta} key={index}> {preguntas.alternativas[0]} </button>
+                    <button onClick={CapturarRespuesta} key={index}> {preguntas.alternativas[1]} </button>
+                    <button onClick={CapturarRespuesta} key={index}> {preguntas.alternativas[2]} </button>
                   </div>
                 </div>
               </div>
