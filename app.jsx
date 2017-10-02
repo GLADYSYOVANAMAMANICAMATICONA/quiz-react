@@ -24,9 +24,9 @@ let preguntas = [
 class Quiz extends React.Component {
 
   constructor(props) {
-    super(props);
+    super(props);//atributosss
     this.state = {
-      respuestasCliqueadas: [],
+      arrayRespuestasCliqueadas: [],
       count: 0
     };
   }
@@ -35,53 +35,46 @@ class Quiz extends React.Component {
     return (
       <div className="header">
         <div className="col-md-12">
-          <h1>QUIZnbcmxbczxnbc</h1>
+          <h1>QUIZ</h1>
         </div>
       </div>
     )
   }
 
-  // Siguiente = () => {//para que no redibuje todo, solo para lo que es diferente
-  //   this.setState({
-  //     count: this.state.count + 1
-  //   })
-  // }
-
-  capturarRespuesta(e) {
-    let respuestaSeleccionada = e.currentTarget.textContend.capturas = respuestasCliqueadas.concat([respuestaSeleccionada]) //captura las respuestas seleccionadas por el momento  
-  }
-
-  resultadoFinal() {
-    <div></div>
+  capturarRespuesta(e) {//captura con e.target.textContent y agrega en el array concat
+    let item = {
+      respuestaSeleccionada: e.target.textContent
+    };
+    this.setState({
+      arrayRespuestasCliqueadas: this.state.arrayRespuestasCliqueadas.concat([item]), //se agrega en el array arrayRespuestasCliqueadas declado como global el item que es capturado 
+      count: this.state.count + 1
+    });
+    console.log(this.state);
+    console.log(item)
   }
 
   render() {//se mostrara las preguntas con sus respuestas
     return (
       <div className="preguntas scoreboard ">
-
+        <div>{this.header()}</div>
         {
           preguntas.map((preguntas, index) => {//preguntas--objeto del array---- INDEX posicion del array
             return (
-              <div className="player" key={index}>
+              <div className="player" key={index} >
                 <div className="player-name " >
-
                   <div  > <img src={preguntas.imagen} /> </div>
                   <p > {preguntas.pregunta} </p>
-
                   <div className="">
-                    <button> {preguntas.alternativas[0]} </button>
-                    <button> {preguntas.alternativas[1]} </button>
-                    <button> {preguntas.alternativas[2]} </button>
+                    <button onClick={(e) => this.capturarRespuesta(e)} className="btn btn-primary" > {preguntas.alternativas[0]} </button>
+                    <button onClick={(e) => this.capturarRespuesta(e)} className="btn btn-primary" > {preguntas.alternativas[1]} </button>
+                    <button onClick={(e) => this.capturarRespuesta(e)} className="btn btn-primary" > {preguntas.alternativas[2]} </button>
                   </div>
                   <div>{this.rSociales()}</div>
-
                 </div>
-
               </div>
             )
           })
         }
-
       </div>
     )
   }
