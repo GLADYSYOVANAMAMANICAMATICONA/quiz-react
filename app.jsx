@@ -4,7 +4,6 @@ let preguntas = [
     alternativas: ["let - const", "let - var", "const - var"],
     imagen: "img/img3.jpg",
     bar: "img/bar.png",
-    respuesta: 0
   },
   {
 
@@ -12,14 +11,17 @@ let preguntas = [
     alternativas: ["ES6 - ES2015", "ES6", "ES2015"],
     imagen: "img/img1.png",
     bar: "img/bar1.png",
-    respuesta: 0
+
   },
   {
     pregunta: "La fecha de la publicación ECMAScript v6",
     alternativas: ["Junio 2015", "Junio 2016", "Julio 2015"],
     imagen: "img/img2.png",
     bar: "img/bar2.png",
-    respuesta: 0
+  },
+  {
+    pregunta: "Respuestas Correctas",
+    alternativas: ["Tipos de variables en ECMAScript v6", "let - const","Abreviado de ECMAScript v6", "ES6 - ES2015","La fecha de la publicación ECMAScript v6", "Junio 2015"],
   },
 ];
 //propiedades son inmutabless
